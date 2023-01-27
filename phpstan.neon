@@ -1,0 +1,14 @@
+includes:
+	- vendor/tomasvotruba/cognitive-complexity/config/extension.neon
+
+parameters:
+	level: 8
+	paths:
+		- src
+		- tests
+
+	checkGenericClassInNonGenericObjectType: false
+
+	cognitive_complexity:
+		class: 50
+		function: 8

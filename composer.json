@@ -1,0 +1,35 @@
+{
+  "name": "esoftsk/doctrine-extensions-bundle",
+  "description": "Utilities and extensions for Doctrine ORM",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "authors": [{
+    "name": "Peter Ivan"
+  }],
+  "require": {
+    "php": ">=7.4",
+    "symfony/orm-pack": "^2.2"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "EsoftSk\\DoctrineExtensionsBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "EsoftSk\\DoctrineExtensionsBundle\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.9",
+    "tomasvotruba/cognitive-complexity": "^0.0.5"
+  }
+}
