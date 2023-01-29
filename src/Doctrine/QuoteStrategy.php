@@ -22,6 +22,9 @@ final class QuoteStrategy extends DefaultQuoteStrategy
         return $name;
     }
 
+    /**
+     * @param array{sequenceName: string} $definition
+     */
     public function getSequenceName(array $definition, OrmClassMetadata $class, AbstractPlatform $platform): string
     {
         $definedName = $definition['sequenceName'];
@@ -36,9 +39,17 @@ final class QuoteStrategy extends DefaultQuoteStrategy
         return $sequenceName;
     }
 
+    /**
+     * @param array{joinTable: array{name: string}} $association
+     * @param \Doctrine\ORM\Mapping\ClassMetadata $class
+     * @param \Doctrine\DBAL\Platforms\AbstractPlatform $platform
+     * @return string
+     */
     public function getJoinTableName(array $association, OrmClassMetadata $class, AbstractPlatform $platform): string
     {
-        return join('.', array_map(
+        return join(
+            '.',
+            array_map(
                 fn (string $part) => "\"$part\"",
                 explode('.', $association['joinTable']['name'])
             )

@@ -30,6 +30,10 @@
   },
   "require-dev": {
     "phpstan/phpstan": "^1.9",
+    "symfony/test-pack": "^1.0",
     "tomasvotruba/cognitive-complexity": "^0.0.5"
-  }
+  },
+    "scripts": {
+      "test": "./vendor/bin/phpunit"
+    }
 }
